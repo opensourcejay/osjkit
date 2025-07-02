@@ -1,0 +1,52 @@
+{
+  "name": "osjkit",
+  "version": "1.0.0",
+  "description": "A modern React template generator for web and desktop applications with TypeScript support",
+  "main": "bin/index.js",
+  "bin": {
+    "osjkit": "bin/index.js"
+  },
+  "scripts": {
+    "prepublishOnly": "echo \"Ready to publish OSJKit\""
+  },
+  "keywords": [
+    "template",
+    "react",
+    "vite",
+    "desktop",
+    "web",
+    "cli",
+    "generator",
+    "boilerplate",
+    "typescript",
+    "tauri",
+    "bem",
+    "responsive"
+  ],
+  "author": "Jay <jcode116@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/opensourcejay/osjkit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opensourcejay/osjkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opensourcejay/osjkit/issues"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "bin/",
+    "templates/",
+    "README.md",
+    ".npmignore"
+  ]
+}
