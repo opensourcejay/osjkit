@@ -1,6 +1,6 @@
 {
   "name": "osjkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modern React template generator for web and desktop applications with TypeScript support",
   "main": "bin/index.js",
   "bin": {
