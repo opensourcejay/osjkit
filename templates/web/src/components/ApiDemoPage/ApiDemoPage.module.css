@@ -1,0 +1,259 @@
+/* API Demo Page Styles */
+.page {
+  padding: 2rem 0;
+  margin-top: 60px; /* Account for fixed navbar */
+  min-height: calc(100vh - 140px); /* Full height minus navbar and footer */
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.intro {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* API Demo Section */
+.demo {
+  display: grid;
+  gap: 2rem;
+}
+
+/* API Configuration */
+.config {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.configTitle {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttonPrimary {
+  background: #667eea;
+  color: white;
+}
+
+.buttonPrimary:hover:not(:disabled) {
+  background: #5a6fd8;
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* API Create */
+.create {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.createTitle {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.buttonSecondary {
+  background: #764ba2;
+  color: white;
+}
+
+.buttonSecondary:hover:not(:disabled) {
+  background: #6a4190;
+  transform: translateY(-1px);
+}
+
+/* Error Message */
+.error {
+  background: #fee;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #feb2b2;
+  margin: 1rem 0;
+}
+
+/* API Results */
+.results {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resultsTitle {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.cardTitle {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.cardBody {
+  margin: 0 0 1rem 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.cardMeta {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* API Documentation */
+.docs {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.docsTitle {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.exampleTitle {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.code {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .demo {
+    gap: 1rem;
+  }
+  
+  .config,
+  .create,
+  .results {
+    padding: 1.5rem;
+  }
+  
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+}

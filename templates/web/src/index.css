@@ -15,7 +15,7 @@ body {
   color: #333;
 }
 
-/* BEM CSS for responsive design */
+/* CSS Modules for responsive design */
 .app {
   min-height: 100vh;
   display: flex;

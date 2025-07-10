@@ -1,0 +1,74 @@
+/* About Page Styles */
+.aboutPage {
+  padding: 2rem 0;
+  margin-top: 60px; /* Account for fixed navbar */
+  min-height: calc(100vh - 140px); /* Full height minus navbar and footer */
+  flex: 1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.content {
+  line-height: 1.6;
+}
+
+.intro,
+.description,
+.conclusion {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.features {
+  margin: 2rem 0;
+}
+
+.featuresTitle {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.featuresList {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.featuresItem {
+  color: #666;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.featuresItem::marker {
+  color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .intro,
+  .description,
+  .conclusion {
+    font-size: 1rem;
+  }
+}

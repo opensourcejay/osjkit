@@ -1,7 +1,7 @@
 {
   "name": "osjkit",
   "version": "1.0.1",
-  "description": "A modern React template generator for web and desktop applications with TypeScript support",
+  "description": "A production-ready React template generator for modern web and desktop applications with CSS Modules, API integration, and comprehensive tooling",
   "main": "bin/index.js",
   "bin": {
     "osjkit": "bin/index.js"
@@ -20,8 +20,11 @@
     "boilerplate",
     "typescript",
     "tauri",
-    "bem",
-    "responsive"
+    "css-modules",
+    "responsive",
+    "production-ready",
+    "api-integration",
+    "modern-stack"
   ],
   "author": "Jay <jcode116@gmail.com>",
   "license": "MIT",

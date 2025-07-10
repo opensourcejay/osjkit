@@ -9,11 +9,11 @@ OSJKit is an npm package that provides ready-to-use templates for creating moder
 ## Features
 
 - 🚀 **Quick Setup** - Generate complete applications with a single command
-- 🌐 **Web Applications** - React + Vite + CSS BEM
+- 🌐 **Web Applications** - React + Vite + CSS Modules
 - 🖥️ **Desktop Applications** - React + Vite + Tauri for native performance
 - 📱 **Mobile Responsive** - All templates are fully responsive
 - 🧪 **Testing Ready** - Pre-configured with Vitest and Testing Library
-- 🎨 **BEM CSS** - Organized CSS architecture using BEM methodology
+- 🎨 **CSS Modules** - Organized CSS architecture using CSS Modules methodology
 - 🔧 **TypeScript Support** - Optional TypeScript support for both platforms
 - ⚡️ **Modern Tooling** - Latest versions of React, Vite, and other tools
 
@@ -72,8 +72,11 @@ npx osjkit my-app
 - **Vite** for fast development and building
 - **Vitest** for testing with Testing Library
 - **ESLint** for code quality
-- **CSS BEM** methodology for maintainable styles
-- **Responsive design** components (Header, Hero, Footer)
+- **React Router** for navigation between pages
+- **API Integration** with ready-to-use service utilities
+- **Sample Pages** (About, Contact, API Demo) for quick customization
+- **CSS Modules** methodology for maintainable styles
+- **Desktop-optimized components** adapted for native app experience
 - **Mobile-first** responsive breakpoints
 
 ### Desktop Applications
@@ -93,15 +96,32 @@ Everything from web applications, plus:
 my-app/
 ├── src/
 │   ├── components/
-│   │   ├── Header/
-│   │   ├── Hero/
-│   │   └── Footer/
+│   │   ├── AboutPage/
+│   │   │   ├── AboutPage.jsx
+│   │   │   ├── AboutPage.module.css
+│   │   │   └── index.js
+│   │   ├── ContactPage/
+│   │   │   ├── ContactPage.jsx
+│   │   │   ├── ContactPage.module.css
+│   │   │   └── index.js
+│   │   ├── ApiDemoPage/
+│   │   │   ├── ApiDemoPage.jsx
+│   │   │   ├── ApiDemoPage.module.css
+│   │   │   └── index.js
+│   │   ├── ExampleComponent/
+│   │   │   ├── ExampleComponent.jsx
+│   │   │   ├── ExampleComponent.module.css
+│   │   │   └── index.js
+│   │   └── README.md
+│   ├── utils/
+│   │   └── api.js
 │   ├── App.jsx
 │   ├── main.jsx
 │   ├── index.css
 │   └── App.css
 ├── package.json
 ├── vite.config.js
+├── .gitignore
 └── README.md
 ```
 
@@ -144,19 +164,30 @@ npm run tauri:build # Build desktop app for distribution
 
 ## CSS Architecture
 
-All templates use **BEM (Block Element Modifier)** methodology:
+All templates use **CSS Modules** methodology:
 
 ```css
-/* Block */
+/* Component.module.css */
 .header { }
+.nav { }
+.title { }
+.navOpen { }
+.buttonLarge { }
+```
 
-/* Element */
-.header__nav { }
-.header__title { }
+```jsx
+// Component.jsx
+import styles from './Component.module.css';
 
-/* Modifier */
-.header__nav--open { }
-.button--large { }
+function Component() {
+  return (
+    <header className={styles.header}>
+      <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ''}`}>
+        <h1 className={styles.title}>Title</h1>
+      </nav>
+    </header>
+  );
+}
 ```
 
 ## Responsive Breakpoints
@@ -248,11 +279,18 @@ For support and questions:
 
 ## Changelog
 
+### 1.0.1
+- Complete CSS Modules migration
+- Added production-ready page components (About, Contact, API Demo)
+- API utility service with live examples
+- Enhanced component structure with reusable patterns
+- Updated documentation and examples
+
 ### 1.0.0
 - Initial release
 - Web application templates with React + Vite
 - Desktop application templates with React + Vite + Tauri
 - TypeScript support
-- BEM CSS methodology
+- CSS Modules methodology
 - Mobile responsive design
 - Testing setup with Vitest

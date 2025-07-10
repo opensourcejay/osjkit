@@ -1,15 +1,18 @@
 # React Web Application
 
-A modern, responsive web application built with React, Vite, and CSS BEM methodology.
+A modern, production-ready web application built with React 18, Vite, and CSS Modules. Features a complete component architecture with routing, API integration, and responsive design.
 
-## Features
+## ✨ Features
 
-- ⚡️ **Fast Development** - Built with Vite for lightning-fast development
-- 🎨 **BEM CSS** - Organized and maintainable CSS using BEM methodology
-- 📱 **Mobile Responsive** - Fully responsive design that works on all devices
-- 🧪 **Testing Ready** - Configured with Vitest and Testing Library
-- ⚛️ **Modern React** - Uses latest React 18 features
-- 🔧 **TypeScript Support** - Optional TypeScript support
+- ⚡️ **Fast Development** - Built with Vite for lightning-fast development and hot reload
+- 🎨 **CSS Modules** - Scoped and maintainable CSS using CSS Modules methodology
+- 📱 **Mobile Responsive** - Fully responsive design optimized for all devices
+- 🧪 **Testing Ready** - Pre-configured with Vitest and React Testing Library
+- ⚛️ **Modern React** - Uses latest React 18 features with hooks and modern patterns
+- � **API Integration** - Ready-to-use API service with live examples
+- 📄 **Sample Pages** - Complete About, Contact, and API Demo pages
+- 🧭 **Routing** - React Router configured with navigation
+- �🔧 **TypeScript Support** - Optional TypeScript support available
 
 ## Getting Started
 
@@ -64,41 +67,72 @@ Run tests with UI:
 npm run test:ui
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
-├── components/          # Reusable UI components
-│   ├── Header/         # Header component with navigation
-│   ├── Hero/           # Hero section component
-│   └── Footer/         # Footer component
-├── App.jsx             # Main application component
-├── main.jsx            # Application entry point
-├── index.css           # Global styles
-└── App.css             # App-specific styles
+├── components/                    # All React components
+│   ├── AboutPage/                # About page component
+│   │   ├── AboutPage.jsx
+│   │   ├── AboutPage.module.css
+│   │   └── index.js
+│   ├── ContactPage/              # Contact page component
+│   │   ├── ContactPage.jsx
+│   │   ├── ContactPage.module.css
+│   │   └── index.js
+│   ├── ApiDemoPage/              # API demonstration page
+│   │   ├── ApiDemoPage.jsx
+│   │   ├── ApiDemoPage.module.css
+│   │   └── index.js
+│   ├── ExampleComponent/         # Example reusable component
+│   │   ├── ExampleComponent.jsx
+│   │   ├── ExampleComponent.module.css
+│   │   └── index.js
+│   └── README.md                 # Component documentation
+├── utils/                        # Utility functions and services
+│   └── api.js                    # API service utility
+├── App.jsx                       # Main application with routing
+├── main.jsx                      # Application entry point
+├── index.css                     # Global styles
+└── App.css                       # App-level styles
 ```
 
 ## CSS Architecture
 
-This project uses **BEM (Block Element Modifier)** methodology for CSS:
+This project uses **CSS Modules** for styling:
 
-- **Block**: Standalone entity that is meaningful on its own (e.g., `header`, `hero`, `footer`)
-- **Element**: A part of a block that has no standalone meaning (e.g., `header__nav`, `hero__title`)
-- **Modifier**: A flag on a block or element for changing appearance or behavior (e.g., `button--large`, `nav--open`)
+- **Scoped Styles**: CSS class names are automatically scoped to prevent conflicts
+- **Better Maintainability**: Easy to rename classes and see which styles belong to which component
+- **Tree Shaking**: Unused styles can be removed during build
+- **No Naming Conflicts**: No need to worry about global class name collisions
 
-### Example BEM Usage
+### Example CSS Modules Usage
+
+```jsx
+// Component.jsx
+import styles from './Component.module.css'
+
+const Component = () => (
+  <div className={styles.wrapper}>
+    <header className={styles.header}>
+      <h1 className={styles.title}>Title</h1>
+      <button className={`${styles.button} ${styles.buttonPrimary}`}>
+        Button
+      </button>
+    </header>
+  </div>
+)
+```
 
 ```css
-/* Block */
+/* Component.module.css */
+.wrapper { }
+
 .header { }
+.title { }
 
-/* Element */
-.header__nav { }
-.header__title { }
-
-/* Modifier */
-.header__nav--open { }
-.button--large { }
+.button { }
+.buttonPrimary { }
 ```
 
 ## Responsive Design
@@ -119,14 +153,96 @@ The application is built with a mobile-first approach using these breakpoints:
 - `npm run test:ui` - Run tests with UI
 - `npm run lint` - Run ESLint
 
-## Technologies Used
+## 🚀 Technologies Used
 
-- **React 18** - UI library
-- **Vite** - Build tool and development server
-- **Vitest** - Testing framework
-- **Testing Library** - Testing utilities
-- **ESLint** - Code linting
-- **CSS BEM** - CSS methodology
+- **React 18** - UI library with latest features and hooks
+- **React Router** - Client-side routing and navigation
+- **Vite** - Next-generation build tool and development server
+- **Vitest** - Fast unit testing framework
+- **Testing Library** - Simple and complete testing utilities
+- **ESLint** - Code linting and quality enforcement
+- **CSS Modules** - Scoped CSS methodology for maintainable styles
+
+## 🔧 API Integration
+
+The project includes a ready-to-use API service (`src/utils/api.js`) with:
+
+- **Configurable base URL** and headers
+- **HTTP methods** (GET, POST, PUT, DELETE)
+- **Automatic error handling** and timeout management
+- **TypeScript support** (when using TypeScript template)
+- **Live examples** in the API Demo page
+
+### Quick API Usage Example
+
+```javascript
+import api from './utils/api'
+
+// Configure for your API
+api.setBaseURL('https://your-api.com/api/v1')
+api.setHeaders({ 'Authorization': 'Bearer your-token' })
+
+// Make requests
+const users = await api.get('/users')
+const newUser = await api.post('/users', { name: 'John', email: 'john@example.com' })
+```
+
+## 🎯 Customization Guide
+
+### Adding New Pages
+
+1. Create a new component folder in `src/components/`
+2. Follow the existing structure:
+   ```
+   NewPage/
+   ├── NewPage.jsx
+   ├── NewPage.module.css
+   └── index.js
+   ```
+3. Add the route to `App.jsx`
+4. Update navigation in the navbar
+
+### Styling Guidelines
+
+- Use CSS Modules for component-specific styles
+- Follow the existing naming convention (camelCase)
+- Keep global styles in `index.css` and `App.css`
+- Use responsive design patterns from existing components
+
+## 📦 Building for Production
+
+1. **Build the application:**
+   ```bash
+   npm run build
+   ```
+
+2. **Test the production build:**
+   ```bash
+   npm run preview
+   ```
+
+3. **Deploy to hosting platforms:**
+   - **Vercel**: Connect your GitHub repo for automatic deploys
+   - **Netlify**: Drag and drop the `dist` folder or connect repo
+   - **GitHub Pages**: Use GitHub Actions to deploy
+   - **Traditional hosting**: Upload contents of `dist` folder
+
+## 🧪 Testing
+
+Run all tests:
+```bash
+npm run test
+```
+
+Run tests in watch mode during development:
+```bash
+npm run test -- --watch
+```
+
+Run tests with coverage:
+```bash
+npm run test -- --coverage
+```
 
 ## Contributing
 
